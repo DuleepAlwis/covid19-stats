@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-7">
+
+        {{this.countryName}}
+        <div *ngIf="!this.graphDisplay" class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div *ngIf="this.graphDisplay" class="chart-box-wrapper">
+            <div class="chart-box">
+                <div class="chart-wrapper">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
